@@ -1,0 +1,60 @@
+{% load static %}
+
+
+
+{% block content %}
+
+
+
+
+<table id = "mytable" class = "datatable" > 
+  
+
+<thead>
+<tr>
+    <th> Serial number </th> 
+    <th> Item name </th>
+    
+    
+  </tr>
+</thead>
+
+<tbody>
+    {% for Item in itemlist %}
+    <tr>
+      <td>{{forloop.counter}} </td>
+      <td> {{Item.name}} </td>
+    
+ 
+    </tr>
+    {% endfor %}
+  </tbody>
+  </table> 
+
+  <select>
+    
+    <!-- 
+    Here SIZES is a tuple variable of your Consumer class,
+    while consumer is an instance of the Consumer class then you can just
+    call SIZES tuple from any of its instances.
+    -->
+    <div class="control-group">
+    <label>Item : </label>
+    <select placeholder="Pick an Item...">
+    {% for name in Item.name %}
+    <option value="{{ name }}"></option>
+    {% endfor %}
+    </select>
+    </div>
+    
+
+
+
+ {% endblock %}
+
+ {% block javaScript %}
+ 
+ 
+ {% endblock %}
+
+ 
